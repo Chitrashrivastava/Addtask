@@ -1,158 +1,104 @@
-/* Cart Container Styles */
-.cart {
+/* Updated Cart Styles */
+
+.cart-container1 {
+  width: 90%; /* Adjusted width for better responsiveness */
+  margin: 2% auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.cart h1 {
+.cart-title1 {
+  text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  font-size: 2em; /* Increased font size for title */
 }
 
-.cart-container11 {
+.cart-products {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  width: 100%;
-  max-width: 1400px;
+  justify-content: center; /* Center items horizontally */
 }
 
-.cart-part1,
-.cart-part2 {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  flex: 1;
-}
-
-.cart-h6 {
+.product-container1 {
+  flex: 1 1 calc(19.333% - 20px); /* Adjusted width for better spacing on larger screens */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 18px;
-  color: #555;
-}
-
-.cart-part-1-content {
   display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.cart-part-1-img img {
-  width: 100px;
+.product-container1:hover {
+  transform: scale(0.98); /* Slightly reduce size on hover */
+}
+
+.product-image1 {
+  width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-.cart-part1-details {
-  flex: 1;
+.product-info1 {
+  padding: 10px;
+  text-align: left; /* Align text to the left */
 }
 
-.cart-quantity-handler {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.product-info1 h2 {
+  font-size: 1.2em;
+  margin-bottom: 5px; /* Restore margin bottom */
 }
 
-.cart-quant-handler {
-  cursor: pointer;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin: 0 5px;
+.product-info1 p {
+  font-size: 1em;
+  color: #888;
+  margin-bottom: 10px; /* Increase margin bottom for spacing */
 }
 
-.cart-quant-handler:hover {
-  background-color: #f0f0f0;
-}
-
-.cartremove {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.cart-buttons {
-  display: flex;
-  align-items: center;
-}
-
-.cartButtons {
-  background-color: #ff6b6b;
-  color: white;
+.add-to-cart-button {
+  background-color: #28a745;
+  color: #fff;
   border: none;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Add margin top */
 }
 
-.cartButtons:hover {
-  background-color: #ff5252;
+.add-to-cart-button:hover {
+  background-color: #218838;
 }
 
-.cart-total-price {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.cart-part2 {
-  max-width: 350px;
-  flex: 1;
-}
-
-.cart-page-checkout {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-}
-
-.email-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-.go-to-checkout {
-  width: 100%;
-  text-align: center;
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.go-to-checkout:hover {
-  background-color: #45a049;
-}
-
-.go-to-checkout a {
-  color: white;
-  text-decoration: none;
+@media (max-width: 1200px) {
+  .product-container1 {
+    flex: 1 1 calc(33% - 20px); /* Two columns on medium screens */
+  }
 }
 
 @media (max-width: 768px) {
-  .cart-container {
-    flex-direction: column;
+  .product-container1 {
+    flex: 1 1 calc(33% - 10px); /* Two columns on small screens with reduced gap */
+  }
+}
+
+@media (max-width: 476px) {
+  .cart-container1 {
+    width: 95%; /* Full width on extra small screens */
+    padding: 10px;
   }
 
-  .cart-part1,
-  .cart-part2 {
-    width: 100%;
+  .product-container1 {
+    flex: 1 1 calc(100% - 20px); /* Full width on extra small screens */
   }
 }
